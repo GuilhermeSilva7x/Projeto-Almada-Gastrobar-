@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Almada Gastrobar | Cozinha • Encontros em Rio Verde - GO</title>
+  <meta name="description"
+    content="Almada Gastrobar em Rio Verde - GO. Um lugar para saborear o momento, pratos nobres, drinks autorais e momentos inesquecíveis.">
+  <meta name="theme-color" content="#0a503f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Almada Gastrobar | Cozinha • Encontros">
+  <meta property="og:description" content="Um lugar para saborear o momento. Pratos & Drinks em Rio Verde - GO.">
+  <meta property="og:image" content="assets/images/fachada.jpeg">
+  <meta property="og:type" content="restaurant">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/monogram-circle.png">
+</head>
+
+<body>
+
+  <!-- Main Mobile App Wrapper -->
+  <main class="mobile-app-container">
+
+    <!-- Top Header -->
+    <header class="site-header" id="topo">
+      <a href="#topo" class="brand-lockup" aria-label="Almada Gastrobar - Início">
+        <img src="assets/images/logo-almada-green.png" alt="Almada Gastrobar" class="brand-logo-full">
+      </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="accent-tag">
+        <span class="gold-bar" aria-hidden="true"></span>
+        <span class="tag-text">COZINHA • ENCONTROS</span>
+      </div>
+
+      <h1 class="section-headline hero-headline" id="hero-title">
+        Um lugar para<br>saborear o momento
+      </h1>
+
+      <div class="hero-buttons">
+        <a href="https://pedido.xmenu.com.br/?hash=WFpZJXxxBAYCBAzequazzequaz#/vitrine" target="_blank"
+          rel="noopener noreferrer" class="btn btn-primary" id="btn-cardapio">
+          Cardápio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/5564992636579?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20reserva%20no%20Almada%20Gastrobar."
+          target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="btn-whatsapp-hero">
+          WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pratos & Drinks Section -->
+    <section class="dishes-section" id="pratos-drinks" aria-labelledby="dishes-title">
+      <div class="dishes-header">
+        <div class="accent-tag">
+          <span class="gold-bar" aria-hidden="true"></span>
+          <span class="tag-text">PRATOS &amp; DRINKS</span>
+        </div>
+
+        <h2 class="section-headline dishes-headline" id="dishes-title">
+          Sabores que<br>merecem um brinde.
+        </h2>
+
+        <!-- Interactive Category Switcher -->
+        <div class="category-tabs" role="tablist" aria-label="Categorias do cardápio">
+          <button class="tab-btn active" data-category="pratos" role="tab" aria-selected="true" id="tab-pratos">
+            Pratos
+          </button>
+          <button class="tab-btn" data-category="drinks" role="tab" aria-selected="false" id="tab-drinks">
+            Drinks
+          </button>
+        </div>
+      </div>
+
+      <!-- Horizontal Cards Carousel with Floating Glass Buttons -->
+      <div class="carousel-wrapper">
+        <button class="carousel-floating-btn prev" id="carousel-float-prev" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="carousel-viewport" id="carousel-viewport" role="region" aria-label="Galeria de pratos e drinks">
+          <!-- Rendered dynamically by js/main.js -->
+        </div>
+
+        <button class="carousel-floating-btn next" id="carousel-float-next" aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Experience / Venue Section -->
+    <section class="experience-section" id="como-chegar" aria-labelledby="experience-title">
+      <div class="accent-tag">
+        <span class="gold-bar" aria-hidden="true"></span>
+        <span class="tag-text">VENHA AO ALMADA GASTROBAR</span>
+      </div>
+
+      <h2 class="section-headline experience-headline" id="experience-title">
+        Viva a experiência<br>Almada.
+      </h2>
+
+      <!-- Facade Photo -->
+      <div class="facade-card">
+        <img src="assets/images/fachada.jpeg" alt="Fachada iluminada do Almada Gastrobar à noite em Rio Verde"
+          width="366" height="348" loading="lazy">
+      </div>
+
+      <!-- Location Info -->
+      <div class="location-card">
+        <div class="location-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="location-content">
+          <h3 class="location-title">Av. José Walter, S/N</h3>
+          <p class="location-address">QUADRA 0001, LOTE 08 - Rio Verde, GO</p>
+          <p class="location-reference">Proximo ao Interlagos</p>
+          <a href="https://maps.app.goo.gl/5DYBSiz5YGbz2K6T6" target="_blank" rel="noopener noreferrer"
+            class="location-map-link">
+            Abrir no mapa
+          </a>
+        </div>
+      </div>
+
+      <!-- Operating Hours -->
+      <div class="hours-block">
+        <h4 class="hours-heading">HORÁRIOS DE FUNCIONAMENTO</h4>
+        <div class="hours-table">
+          <div class="hours-row">
+            <span class="hours-day">Segunda a sexta</span>
+            <span class="hours-time">17:00 — 00:00</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sábado</span>
+            <span class="hours-time">11:00 — 00:30</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Domingo</span>
+            <span class="hours-time">11:00 — 17:00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="reservas" aria-labelledby="cta-title">
+      <span class="cta-tag">PEDIDOS E RESERVAS PELO WHATSAPP</span>
+      <h2 class="cta-headline" id="cta-title">
+        Em casa ou no Almada,<br>escolha seu momento.
+      </h2>
+
+      <a href="https://wa.me/5564992636579?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20reserva%20no%20Almada%20Gastrobar."
+        target="_blank" rel="noopener noreferrer" class="btn-white-cta" id="btn-whatsapp-cta">
+        <span>Falar com a gente no WhatsApp</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+
+      <a href="https://wa.me/5564992636579?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20ou%20pedido%20no%20Almada%20Gastrobar."
+        target="_blank" rel="noopener noreferrer" class="cta-phone-link">
+        (64) 99263-6579
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <img src="assets/images/logo-almada-white.png" alt="Almada Gastrobar" class="footer-logo-img" height="46">
+        </div>
+
+        <div class="footer-social-icons">
+          <!-- Ícone Instagram -->
+          <a href="https://www.instagram.com/almadagastrobar" target="_blank" rel="noopener noreferrer"
+            class="social-circle-btn" aria-label="Instagram Almada Gastrobar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- Ícone WhatsApp -->
+          <a href="https://wa.me/5564992636579?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Almada%20Gastrobar."
+            target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp Almada Gastrobar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ícone e username do Instagram -->
+      <a href="https://www.instagram.com/almadagastrobar" target="_blank" rel="noopener noreferrer"
+        class="footer-instagram-handle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>@almadagastrobar</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <a href="https://pedido.xmenu.com.br/?hash=WFpZJXxxBAYCBAzequazzequaz#/vitrine" target="_blank"
+          rel="noopener noreferrer" class="footer-nav-link">Cardápio</a>
+        <a href="https://wa.me/5564992636579?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Almada%20Gastrobar."
+          target="_blank" rel="noopener noreferrer" class="footer-nav-link">Reservas</a>
+        <a href="https://maps.app.goo.gl/5DYBSiz5YGbz2K6T6" target="_blank" rel="noopener noreferrer"
+          class="footer-nav-link">Como chegar</a>
+      </nav>
+
+      <!-- Footer Bottom: Copyright & Developer Credits -->
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">
+          &copy; 2026 Almada Gastrobar
+        </p>
+
+        <p class="footer-developer">
+          Desenvolvido por
+          <a href="https://www.instagram.com/guilhermeesilvax/" target="_blank" rel="noopener noreferrer"
+            class="dev-author-link" title="Instagram de Guilherme Silva">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@guilhermeesilvax</span>
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Toast Notice -->
+    <div class="toast-notice" id="toast-notice" role="alert" aria-live="polite"></div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

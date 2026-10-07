@@ -1,0 +1,790 @@
+/* ==========================================================================
+   ALMADA GASTROBAR - MOBILE PROTOTYPE STYLES
+   Design System & Styling matching prototype specification
+   ========================================================================== */
+
+/* --- GOOGLE FONTS & BRAND FONTS IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* --- OFFICIAL ALMADA BRAND SCRIPT FONT --- */
+@font-face {
+  font-family: 'Almada';
+  src: url('../assets/fonts/Almada.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- DESIGN TOKENS / CSS VARIABLES --- */
+:root {
+  /* Brand Color Palette extracted directly from original design */
+  --color-primary: #0a503f;         /* Dark Emerald Green */
+  --color-primary-dark: #073b2f;    /* Deep Pine Green (Footer & Dark Surfaces) */
+  --color-primary-hover: #084334;
+  --color-accent-gold: #b89959;     /* Warm Gold Tag Accent Line */
+  --color-text-dark: #16332a;       /* Deep Forest Text for Titles */
+  --color-text-muted: #64756e;      /* Slate Gray for Subtitles and Details */
+  --color-text-light: #dde8e2;      /* Light Mint-White for Dark Sections */
+  --color-text-dimmed: #8dafa3;     /* Dimmed Text for Copyright & Subtle Notes */
+  
+  /* Backgrounds */
+  --bg-white: #ffffff;
+  --bg-sand: #f8f6ef;               /* Warm Light Sand for Pratos & Drinks */
+  --bg-mint-soft: #edf4ef;          /* Soft Mint for Location Pin Box */
+  --bg-page: #f1efea;               /* Subtle page backdrop for desktop preview */
+  
+  /* Borders & Dividers */
+  --border-light: #ebe8e1;
+  --border-subtle: #f0ede6;
+  --border-white-trans: rgba(221, 232, 226, 0.35);
+
+  /* Typography */
+  --font-brand: 'Almada', cursive;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing & Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --container-max-w: 430px;         /* Standard modern mobile viewport */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- RESET & GLOBAL SETTINGS --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --- MOBILE SHELL / CONTAINER --- */
+.mobile-app-container {
+  width: 100%;
+  max-width: var(--container-max-w);
+  background-color: var(--bg-white);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (min-width: 500px) {
+  body {
+    padding: 24px 0 40px;
+  }
+  .mobile-app-container {
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(10, 80, 63, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* --- ACCENT TAG (Gold Line + Category Text) --- */
+.accent-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.accent-tag .gold-bar {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--color-accent-gold);
+  border-radius: 1px;
+  position: relative;
+}
+
+
+
+.accent-tag .tag-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Section Headlines */
+.section-headline {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1.14;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  letter-spacing: -0.01em;
+}
+
+/* --- HEADER --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-white);
+  padding: calc(14px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right)) 14px calc(20px + env(safe-area-inset-left));
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-lockup:hover {
+  opacity: 0.88;
+}
+
+.brand-logo-full {
+  height: 80px;
+  width: auto;
+  max-height: 20vh;
+  object-fit: contain;
+}
+
+@media (max-width: 430px) {
+  .brand-logo-full {
+    height: 60px;
+  }
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  padding: 30px 24px 34px 24px;
+  background-color: var(--bg-white);
+}
+
+.hero-headline {
+  font-size: 36px;
+  line-height: 1.14;
+  margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 1.5px solid var(--color-primary);
+  box-shadow: 0 4px 12px rgba(10, 80, 63, 0.18);
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-outline:hover, .btn-outline:active {
+  background-color: rgba(10, 80, 63, 0.05);
+}
+
+/* --- SECTION: PRATOS & DRINKS --- */
+.dishes-section {
+  background-color: var(--bg-sand);
+  padding: 34px 0 38px 0;
+}
+
+.dishes-header {
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.dishes-headline {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(10, 80, 63, 0.2);
+}
+
+.tab-btn:not(.active):hover {
+  background-color: rgba(10, 80, 63, 0.06);
+}
+
+/* Horizontal Scroll Carousel Wrapper with Floating Glass Controls */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-floating-btn {
+  position: absolute;
+  top: calc(50% - 10px);
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-fast);
+  padding: 0;
+  opacity: 0.92;
+}
+
+.carousel-floating-btn.prev {
+  left: 10px;
+}
+
+.carousel-floating-btn.next {
+  right: 10px;
+}
+
+.carousel-floating-btn:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 6px 18px rgba(10, 80, 63, 0.28);
+}
+
+.carousel-floating-btn:hover svg {
+  stroke: #ffffff;
+}
+
+.carousel-floating-btn:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.carousel-floating-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary);
+  transition: stroke var(--transition-fast);
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 24px 14px 24px;
+  display: flex;
+  gap: 12px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.dish-card {
+  flex: 0 0 135px;
+  width: 135px;
+  height: 226px;
+  scroll-snap-align: start;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  background-color: #e6e3da;
+  cursor: pointer;
+}
+
+.dish-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dish-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* --- SECTION: VENHA AO ALMADA GASTROBAR --- */
+.experience-section {
+  background-color: var(--bg-white);
+  padding: 34px 24px 38px 24px;
+}
+
+.experience-headline {
+  margin-bottom: 20px;
+}
+
+/* Featured Venue Image */
+.facade-card {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  background-color: #1a221f;
+}
+
+.facade-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.05 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* Location Info Block */
+.location-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.location-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-mint-soft);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.location-icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.location-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.location-address {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.location-reference {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.location-map-link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 8px;
+  transition: opacity var(--transition-fast);
+}
+
+.location-map-link:hover {
+  opacity: 0.8;
+}
+
+/* Operating Hours */
+.hours-block {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
+}
+
+.hours-heading {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.hours-table {
+  width: 100%;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid #f2f2ef;
+  font-size: 13px;
+}
+
+.hours-day {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.hours-time {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* --- SECTION: CTA / WHATSAPP BANNER --- */
+.cta-section {
+  background-color: var(--color-primary);
+  padding: 40px 24px 34px 24px;
+  text-align: left;
+}
+
+.cta-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 26px;
+}
+
+.btn-white-cta {
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1.5px solid #ffffff;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  transition: all var(--transition-fast);
+}
+
+.btn-white-cta svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2;
+}
+
+.btn-white-cta:hover, .btn-white-cta:active {
+  background-color: #f7faf8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.cta-phone-link {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  transition: opacity var(--transition-fast);
+}
+
+.cta-phone-link:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  background-color: var(--color-primary-dark);
+  padding: 34px 24px 38px 24px;
+  color: var(--color-text-light);
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 195px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.social-circle-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-white-trans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-circle-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-circle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.footer-instagram-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  margin-bottom: 22px;
+  transition: color var(--transition-fast);
+}
+
+.footer-instagram-handle:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-instagram-handle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid rgba(221, 232, 226, 0.12);
+  border-bottom: 1px solid rgba(221, 232, 226, 0.12);
+  margin-bottom: 18px;
+}
+
+.footer-nav-link {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+.footer-copyright {
+  font-size: 10px;
+  color: var(--color-text-dimmed);
+  letter-spacing: 0.03em;
+}
+
+.footer-developer {
+  font-size: 10.5px;
+  color: var(--color-text-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dev-author-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.dev-author-link svg {
+  width: 12px;
+  height: 12px;
+  stroke: #ffffff;
+  flex-shrink: 0;
+}
+
+.dev-author-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* --- TOAST NOTIFICATION FOR COPY / INTERACTIONS --- */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #1a221f;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
