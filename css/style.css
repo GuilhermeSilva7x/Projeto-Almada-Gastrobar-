@@ -402,7 +402,7 @@ body {
 }
 
 .dish-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 
@@ -419,22 +419,86 @@ body {
   margin-bottom: 20px;
 }
 
-/* Featured Venue Image */
-.facade-card {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+/* Venue Photo Gallery */
+.facade-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
   margin-bottom: 24px;
-  background-color: #1a221f;
 }
 
-.facade-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.05 / 1;
-  object-fit: cover;
+.facade-photo {
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: #1a221f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
+}
+
+.facade-photo img {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.facade-photo:hover img {
+  transform: scale(1.1);
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(82vw, 420px);
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  aspect-ratio: 1;
+  padding: 12px;
+  border: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #101512;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.image-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.lightbox-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.lightbox-close svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Location Info Block */

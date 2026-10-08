@@ -122,10 +122,14 @@
         Viva a experiência<br>Almada.
       </h2>
 
-      <!-- Facade Photo -->
-      <div class="facade-card">
-        <img src="assets/images/fachada.jpeg" alt="Fachada iluminada do Almada Gastrobar à noite em Rio Verde"
-          width="366" height="348" loading="lazy">
+      <!-- Venue Photos -->
+      <div class="facade-gallery">
+        <button class="facade-photo" type="button" aria-label="Ampliar foto: Fachada iluminada">
+          <img src="assets/images/fachada.jpeg" alt="Fachada iluminada" width="366" height="348" loading="lazy">
+        </button>
+        <button class="facade-photo" type="button" aria-label="Ampliar foto: Salão do Almada com vista para o lago">
+          <img src="assets/images/almada.jpeg" alt="Salão do Almada com vista para o lago" width="366" height="348" loading="lazy">
+        </button>
       </div>
 
       <!-- Location Info -->
@@ -271,6 +275,16 @@
     <div class="toast-notice" id="toast-notice" role="alert" aria-live="polite"></div>
 
   </main>
+
+  <dialog class="image-lightbox" id="image-lightbox" aria-label="Foto ampliada">
+    <button class="lightbox-close" type="button" aria-label="Fechar foto ampliada">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img class="lightbox-image" alt="">
+  </dialog>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

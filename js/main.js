@@ -138,6 +138,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderCarousel('pratos');
 
+  // Open venue photos in a square, contained lightbox.
+  const imageLightbox = document.getElementById('image-lightbox');
+  const lightboxImage = imageLightbox?.querySelector('.lightbox-image');
+  const lightboxClose = imageLightbox?.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.facade-photo').forEach(photo => {
+    photo.addEventListener('click', () => {
+      const image = photo.querySelector('img');
+      if (!imageLightbox || !lightboxImage || !image) return;
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      imageLightbox.showModal();
+    });
+  });
+
+  lightboxClose?.addEventListener('click', () => imageLightbox?.close());
+  imageLightbox?.addEventListener('click', event => {
+    if (event.target === imageLightbox) imageLightbox.close();
+  });
+
   // --- TOAST NOTIFICATION HELPER ---
   const toast = document.getElementById('toast-notice');
   let toastTimer;
